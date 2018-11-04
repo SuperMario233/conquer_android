@@ -13,6 +13,8 @@ public class conquering extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conquering);
 
+        conquer_map.activityList.add(this);
+
         Button finishButton = (Button) findViewById(R.id.finishButton);
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override

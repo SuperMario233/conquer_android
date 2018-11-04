@@ -13,6 +13,8 @@ public class rank extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rank);
 
+        conquer_map.activityList.add(this);
+
         Button exitButton = (Button) findViewById(R.id.exitButton);
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override

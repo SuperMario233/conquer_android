@@ -13,6 +13,8 @@ public class sign_up extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        conquer_map.activityList.add(this);
+
         Button signupButton = (Button) findViewById(R.id.signupButton);
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override

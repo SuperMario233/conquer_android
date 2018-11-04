@@ -90,28 +90,34 @@
         android:id="@+id/passwordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="21dp"
         android:ems="10"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="279dp" />
+        app:layout_constraintStart_toEndOf="@+id/rankLabel"
+        app:layout_constraintTop_toBottomOf="@+id/accountText" />
 
     <EditText
         android:id="@+id/nicknameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="339dp" />
+        app:layout_constraintStart_toEndOf="@+id/team1Label"
+        app:layout_constraintTop_toBottomOf="@+id/passwordText" />
 
     <EditText
         android:id="@+id/teamText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="14dp"
         android:ems="10"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="399dp" />
+        app:layout_constraintStart_toEndOf="@+id/teamLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nicknameText" />
 
     <Button
         android:id="@+id/signupButton"
