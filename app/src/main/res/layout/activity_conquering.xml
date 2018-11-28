@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#03a9f4"
     tools:context=".conquering">
 
     <TextView
@@ -12,7 +13,8 @@
         android:layout_height="wrap_content"
         android:text="Conquer"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="64sp"
+        android:textColor="#ffffff"
+        android:textSize="56sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -27,7 +29,8 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="31dp"
         android:text="Conquering"
-        android:textSize="24sp"
+        android:textColor="#ffff00"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -38,7 +41,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="54dp"
         android:text="据点"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hint" />
 
@@ -49,7 +52,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="44dp"
         android:text="时间"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pointLabel" />
 
@@ -60,7 +63,7 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="54dp"
         android:text="无效位置"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/pointLabel"
         app:layout_constraintTop_toBottomOf="@+id/hint" />
 
@@ -71,7 +74,7 @@
         android:layout_marginStart="58dp"
         android:layout_marginTop="44dp"
         android:text="15:00"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/timeLabel"
         app:layout_constraintTop_toBottomOf="@+id/pointText" />
 
@@ -81,7 +84,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
         android:layout_marginTop="219dp"
+        android:background="#3949ab"
         android:text="结束"
+        android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hint" />
 

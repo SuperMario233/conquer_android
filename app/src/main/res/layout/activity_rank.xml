@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#03a9f4"
     tools:context=".rank">
 
     <TextView
@@ -12,7 +13,8 @@
         android:layout_height="wrap_content"
         android:text="Conquer"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="64sp"
+        android:textColor="#ffffff"
+        android:textSize="56sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -27,7 +29,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="31dp"
         android:text="据点"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -38,7 +40,7 @@
         android:layout_marginEnd="70dp"
         android:layout_marginTop="31dp"
         android:text="未知"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -49,7 +51,7 @@
         android:layout_marginEnd="70dp"
         android:layout_marginTop="28dp"
         android:text="0"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pointText" />
 
@@ -60,7 +62,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="28dp"
         android:text="我的贡献"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hint" />
 
@@ -71,7 +73,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="28dp"
         android:text="贡献排行榜"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scoreLabel" />
 
@@ -82,7 +84,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="28dp"
         android:text="红方"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rankLabel" />
 
@@ -93,7 +95,7 @@
         android:layout_marginEnd="70dp"
         android:layout_marginTop="88dp"
         android:text="0"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scoreText" />
 
@@ -104,7 +106,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="28dp"
         android:text="蓝方"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/team1Label" />
 
@@ -115,7 +117,7 @@
         android:layout_marginEnd="70dp"
         android:layout_marginTop="28dp"
         android:text="0"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/team1Text" />
 
@@ -125,7 +127,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
         android:layout_marginTop="152dp"
+        android:background="#3949ab"
         android:text="返回"
+        android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rankLabel" />
 
