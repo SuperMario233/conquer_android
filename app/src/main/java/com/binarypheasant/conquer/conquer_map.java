@@ -26,7 +26,7 @@ import java.util.List;
 public class conquer_map extends AppCompatActivity {
 
     String statusCode;
-    String[] location_name,location_group;
+    static public String[] location_name,location_group;
     int[] location_score;
     int location_num;
 

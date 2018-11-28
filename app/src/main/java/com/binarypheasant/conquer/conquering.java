@@ -1,10 +1,11 @@
 package com.binarypheasant.conquer;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -17,12 +18,16 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class conquering extends AppCompatActivity {
 
     String statusCode;
-    int score;
+    int score,time = 0;
     static String location;
+    Timer timer = new Timer();
+    TextView timeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,21 +36,41 @@ public class conquering extends AppCompatActivity {
 
         conquer_map.activityList.add(this);
 
+        location = conquer_map.location_name[(int)(Math.random()*10)%5];
+        TextView locationView = findViewById(R.id.pointText);
+        locationView.setText(location);
+
+        timeView = findViewById(R.id.timeText);
+        timer.schedule(task,1000,1000);
+
         Button finishButton = (Button) findViewById(R.id.finishButton);
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                location = "TeachingBuilding1";
+                timer.cancel();
                 sendRequestWithHttpURLConnection();
             }
         });
     }
 
+    TimerTask task = new TimerTask() {
+        @Override
+        public void run() {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    time++;
+                    timeView.setText(String.format("%02d",time/60)+":"+String.format("%02d",time%60));
+                }
+            });
+        }
+    };
+
     private void sendRequestWithHttpURLConnection(){
         new Thread(new Runnable() {
             @Override
             public void run() {
-                score = 5;
+                score = time/2;
                 HttpURLConnection connection = null;
                 BufferedReader reader = null;
                 try{
@@ -102,6 +127,7 @@ public class conquering extends AppCompatActivity {
         else if (statusCode.equals("0")){
             Toast.makeText(conquering.this, "上传成功", Toast.LENGTH_LONG).show();
             Intent GotoNext = new Intent(conquering.this, rank.class);
+            GotoNext.putExtra("score",time/2);
             startActivity(GotoNext);
         }
         else{
