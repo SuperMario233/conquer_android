@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#03a9f4"
     tools:context=".conquer_map">
 
     <TextView
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Conquer"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#ffffff"
+        android:textColor="#03a9f4"
         android:textSize="56sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -100,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#3949ab"
+            android:background="#03a9f4"
             android:text="Conquer"
             android:textColor="#ffffff"
             app:layout_constraintStart_toStartOf="parent"
@@ -111,7 +110,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#3949ab"
+            android:background="#03a9f4"
             android:text="退出"
             android:textColor="#ffffff"
             app:layout_constraintStart_toEndOf="@+id/conquerButton"

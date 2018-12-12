@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#03a9f4"
     tools:context=".rank">
 
     <TextView
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Conquer"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#ffffff"
+        android:textColor="#0288d1"
         android:textSize="56sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -127,7 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:layout_marginStart="148dp"
-        android:background="#3949ab"
+        android:background="#03a9f4"
         android:text="返回"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"

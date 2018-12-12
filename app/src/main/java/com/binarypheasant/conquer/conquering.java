@@ -128,6 +128,7 @@ public class conquering extends AppCompatActivity {
             Toast.makeText(conquering.this, "上传成功", Toast.LENGTH_LONG).show();
             Intent GotoNext = new Intent(conquering.this, rank.class);
             GotoNext.putExtra("score",time/2);
+            GotoNext.putExtra("location",location);
             startActivity(GotoNext);
         }
         else{

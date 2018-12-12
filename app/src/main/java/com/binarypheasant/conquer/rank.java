@@ -32,8 +32,11 @@ public class rank extends AppCompatActivity {
         conquer_map.activityList.add(this);
 
         TextView scoreView = findViewById(R.id.scoreText);
+        TextView locationView = findViewById(R.id.pointText);
         int myscore = getIntent().getIntExtra("score",0);
         scoreView.setText(String.valueOf(myscore));
+        String location = getIntent().getStringExtra("location");
+        locationView.setText(location);
 
         sendRequestWithHttpURLConnection();
 

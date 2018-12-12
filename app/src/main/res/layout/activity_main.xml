@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#03a9f4"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Conquer"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#ffffff"
+        android:textColor="#0288d1"
         android:textSize="56sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,7 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
         android:text="占领据点，征服你自己"
-        android:textColor="#ffff00"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -39,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
         android:layout_marginTop="41dp"
-        android:background="#3949ab"
+        android:background="#03a9f4"
         android:text="登录"
         android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
         android:layout_marginTop="8dp"
-        android:background="#3949ab"
+        android:background="#03a9f4"
         android:text="注册"
         android:textColor="#ffffff"
         app:layout_constraintStart_toStartOf="parent"
