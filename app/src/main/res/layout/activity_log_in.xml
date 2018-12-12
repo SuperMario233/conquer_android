@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:text="Conquer"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="64sp"
+        android:textColor="#0288d1"
+        android:textSize="56sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -27,7 +28,7 @@
         android:layout_marginStart="70dp"
         android:layout_marginTop="31dp"
         android:text="登录"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -35,10 +36,10 @@
         android:id="@+id/scoreLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="54dp"
         android:text="账号"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hint" />
 
@@ -46,10 +47,11 @@
         android:id="@+id/accountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="117dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="104dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/scoreLabel"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
@@ -57,10 +59,10 @@
         android:id="@+id/rankLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="84dp"
         android:layout_marginTop="44dp"
         android:text="密码"
-        android:textSize="24sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scoreLabel" />
 
@@ -68,10 +70,11 @@
         android:id="@+id/passwordText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/rankLabel"
         app:layout_constraintTop_toBottomOf="@+id/accountText" />
 
@@ -79,10 +82,12 @@
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
         android:layout_marginStart="148dp"
-        android:layout_marginTop="44dp"
+        android:background="#03a9f4"
         android:text="登录"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordText" />
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
