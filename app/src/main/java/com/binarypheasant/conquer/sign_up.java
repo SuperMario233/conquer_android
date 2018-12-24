@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 
 public class sign_up extends AppCompatActivity {
 
-    String account,password,group,nickname,statusCode,token,checkCode,errorCode;
+    String account,password,group,nickname,statusCode,token,checkCode,errorCode,errorInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,18 +66,23 @@ public class sign_up extends AppCompatActivity {
                 }
                 if(TextUtils.isEmpty(checkCode)){
                     user_checkcode.setError("验证码不能为空");
+                    return;
+                }
+                if(token == null){
+                    user_checkcode.setError("token为空");
+                    return;
                 }
                 sendRequestWithHttpURLConnection();
             }
         });
 
-        Button checkButton = findViewById(R.id.checkcodeButton);
+        final Button checkButton = findViewById(R.id.checkcodeButton);
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText accountText = findViewById(R.id.accountText);
                 if(isAccount(accountText.getText().toString())){
-                    sendRequestWithHttpURLConnection_check(accountText.getText().toString());
+                    sendRequestWithHttpURLConnection_check(accountText.getText().toString(),checkButton);
                 }
                 else{
                     accountText.setError("请输入正确账号");
@@ -92,13 +97,14 @@ public class sign_up extends AppCompatActivity {
         return isNum.matches();
     }
 
-    private void sendRequestWithHttpURLConnection_check(final String account){
+    private void sendRequestWithHttpURLConnection_check(final String account, final Button checkButton){
         new Thread(new Runnable() {
             @Override
             public void run() {
                 HttpURLConnection connection = null;
                 BufferedReader reader = null;
-                try{
+                checkButton.setClickable(false);
+;                try{
                     URL url = new URL("https://ingfo.huyunfan.cn/user/mail.php");
                     connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("POST");
@@ -116,7 +122,7 @@ public class sign_up extends AppCompatActivity {
                     //Log.v("HTTPResponse",response.toString());
 
                     JSONObject jsonresponse = new JSONObject(response.toString());
-                    MailCheck(jsonresponse);
+                    MailCheck(jsonresponse,checkButton);
                     //showResponse(response.toString());
                 } catch (Exception e){
                     e.printStackTrace();
@@ -136,7 +142,7 @@ public class sign_up extends AppCompatActivity {
         }).start();
     }
 
-    private void MailCheck(JSONObject response){
+    private void MailCheck(JSONObject response, Button checkButton){
         try{
             token = response.getString("token");
             statusCode = response.getString("response");
@@ -144,8 +150,9 @@ public class sign_up extends AppCompatActivity {
         }catch (JSONException e){
             e.printStackTrace();
         }
-        if(statusCode != null) showResponse("验证码发送成功");
+        if(statusCode != null && token != null) showResponse("验证码发送成功"+token);
         else showResponse("发送验证码错误："+errorCode);
+        checkButton.setClickable(true);
     }
 
     private void sendRequestWithHttpURLConnection(){
@@ -161,7 +168,7 @@ public class sign_up extends AppCompatActivity {
                     connection.setConnectTimeout(8000);
                     connection.setReadTimeout(8000);
                     DataOutputStream out = new DataOutputStream(connection.getOutputStream());
-                    out.writeBytes("token="+token+"&vocde="+checkCode+"&account="+account+"&password="+password+"&group="+group+"&nickname="+nickname);
+                    out.writeBytes("token="+token+"&vcode="+checkCode+"&account="+account+"&password="+password+"&group="+group+"&nickname="+nickname);
                     InputStream in = connection.getInputStream();
                     reader = new BufferedReader(new InputStreamReader(in));
                     StringBuilder response = new StringBuilder();
@@ -205,6 +212,7 @@ public class sign_up extends AppCompatActivity {
         //// parse the response
         try{
             statusCode = response.getString("status");
+            errorInfo = response.getString("vcode");
         }catch (JSONException e){
             e.printStackTrace();
         }
@@ -215,6 +223,12 @@ public class sign_up extends AppCompatActivity {
             statusCode = null;
             Intent GotoNext = new Intent(sign_up.this, log_in.class);
             startActivity(GotoNext);
+        }
+        else if (statusCode.equals("3") || statusCode.equals(4)){
+            showResponse("请先申请验证码");
+        }
+        else if (statusCode.equals("5")){
+            showResponse("验证码错误");
         }
         else{
             showResponse("其他错误，返回值"+String.valueOf(statusCode));
