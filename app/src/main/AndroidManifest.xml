@@ -30,7 +30,10 @@
         <activity android:name=".sign_up" />
         <activity android:name=".conquer_map" />
         <activity android:name=".conquering" />
-        <activity android:name=".rank"></activity>
+        <activity android:name=".rank" />
+        <activity
+            android:name=".profile"
+            android:label="@string/title_activity_profile"></activity>
     </application>
 
 </manifest>
