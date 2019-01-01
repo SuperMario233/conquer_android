@@ -3,6 +3,7 @@ package com.binarypheasant.conquer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +67,15 @@ public class conquer_map extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 exit();
+            }
+        });
+
+        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent GotoProfile = new Intent(conquer_map.this, profile.class);
+                startActivity(GotoProfile);
             }
         });
     }
