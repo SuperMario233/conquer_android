@@ -1,5 +1,6 @@
 package com.binarypheasant.conquer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,10 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Home extends Fragment {
-    private TextView textView;
     private Button button;
     @Nullable
     @Override
@@ -23,15 +22,18 @@ public class Home extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        textView=(TextView)getActivity().findViewById(R.id.textView1);
-        button=(Button)getActivity().findViewById(R.id.button1);
+        button = (Button)getActivity().findViewById(R.id.logoutButton);
+        TextView nicknameText = getActivity().findViewById(R.id.nickName);
+        nicknameText.setText(log_in.nickname);
+        TextView groupText = getActivity().findViewById(R.id.groupName);
+        groupText.setText(log_in.group);/**/
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(),"Fragment1",Toast.LENGTH_SHORT).show();
+                Intent GotoNext = new Intent(getActivity(), MainActivity.class);
+                startActivity(GotoNext);
             }
         });
-
 
     }
 }
