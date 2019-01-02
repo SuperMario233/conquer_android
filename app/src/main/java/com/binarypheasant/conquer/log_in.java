@@ -30,7 +30,7 @@ import java.net.URL;
 public class log_in extends AppCompatActivity {
 
     public String statusCode,account,password;
-    static String userid,group,nickname,token;
+    public static String userid,group,nickname,token;
     boolean SendRet;
 
     @Override

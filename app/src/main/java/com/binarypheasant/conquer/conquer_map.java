@@ -3,6 +3,7 @@ package com.binarypheasant.conquer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +67,15 @@ public class conquer_map extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 exit();
+            }
+        });
+
+        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent GotoProfile = new Intent(conquer_map.this, profile.class);
+                startActivity(GotoProfile);
             }
         });
     }
@@ -155,15 +165,11 @@ public class conquer_map extends AppCompatActivity {
             showResponse("其他错误，返回值"+String.valueOf(statusCode));
             return;
         }
-        while(should_continue){
+        for(i=0;i<result.length();i++){
             try{
-                temp = result.getJSONObject(i++);
-                if (temp == null||temp.getString("location")==null) {should_continue = false;break;}
-                else{
-                    UpdateLocation(temp.getString("location"),temp.getString("group"),temp.getString("totalscore"));
-                }
+                temp = result.getJSONObject(i);
+                UpdateLocation(temp.getString("location"),temp.getString("group"),temp.getString("totalscore"));
             }catch (JSONException e){e.printStackTrace();}
-            if (i>=location_num) break;
         }
     }
 
