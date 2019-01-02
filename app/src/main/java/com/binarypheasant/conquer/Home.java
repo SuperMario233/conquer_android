@@ -26,7 +26,9 @@ public class Home extends Fragment {
         TextView nicknameText = getActivity().findViewById(R.id.nickName);
         nicknameText.setText(log_in.nickname);
         TextView groupText = getActivity().findViewById(R.id.groupName);
-        groupText.setText(log_in.group);/**/
+        groupText.setText(log_in.group);
+        TextView scoreText = getActivity().findViewById(R.id.score);
+        scoreText.setText(String.valueOf(profile.myscore));
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

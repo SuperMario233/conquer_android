@@ -6,32 +6,30 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class PersonRank extends Fragment {
-    private TextView textView;
-    private Button button;
+    private ListView listView;
+    private ArrayAdapter adapter;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_home,container,false);
+        View view=inflater.inflate(R.layout.fragment_person_rank,container,false);
         return view;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        textView=(TextView)getActivity().findViewById(R.id.textView1);
-        button=(Button)getActivity().findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity(),"Fragment1",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
+        listView = getActivity().findViewById(R.id.scorelist);
+        final ArrayList<String> list = new ArrayList<>();
+        for (int i=0;i<profile.person_num;++i){
+            list.add(profile.namelist[i]+"\t\t\t\t\t\t\t\t\t\t\t"+String.valueOf(profile.scorelist[i]));
+        }
+        adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,list);
+        listView.setAdapter(adapter);
     }
 }

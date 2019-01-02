@@ -165,15 +165,11 @@ public class conquer_map extends AppCompatActivity {
             showResponse("其他错误，返回值"+String.valueOf(statusCode));
             return;
         }
-        while(should_continue){
+        for(i=0;i<result.length();i++){
             try{
-                temp = result.getJSONObject(i++);
-                if (temp == null||temp.getString("location")==null) {should_continue = false;break;}
-                else{
-                    UpdateLocation(temp.getString("location"),temp.getString("group"),temp.getString("totalscore"));
-                }
+                temp = result.getJSONObject(i);
+                UpdateLocation(temp.getString("location"),temp.getString("group"),temp.getString("totalscore"));
             }catch (JSONException e){e.printStackTrace();}
-            if (i>=location_num) break;
         }
     }
 

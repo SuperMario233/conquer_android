@@ -66,6 +66,15 @@ public class conquering extends AppCompatActivity {
         }
     };
 
+    private void showResponse(final String response){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(conquering.this, response, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
     private void sendRequestWithHttpURLConnection(){
         new Thread(new Runnable() {
             @Override
@@ -122,17 +131,17 @@ public class conquering extends AppCompatActivity {
         //SendRet = false;
 
         if(statusCode.equals("1")){
-            Toast.makeText(conquering.this, "用户不存在", Toast.LENGTH_LONG).show();
+            showResponse("用户不存在");
         }
         else if (statusCode.equals("0")){
-            Toast.makeText(conquering.this, "上传成功", Toast.LENGTH_LONG).show();
+            showResponse("上传成功");
             Intent GotoNext = new Intent(conquering.this, rank.class);
             GotoNext.putExtra("score",time/2);
             GotoNext.putExtra("location",location);
             startActivity(GotoNext);
         }
         else{
-            Toast.makeText(conquering.this, "其他错误：返回值"+statusCode, Toast.LENGTH_LONG).show();
+            showResponse("其他错误：返回值"+statusCode);
         }/**/
     }
 
